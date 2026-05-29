@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Милый дракончик Найлун • Планета милоты</title>
+    <title>奶龙官方主页</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: '#FFD93D',
-                        secondary: '#94D2BD',
-                        neutral: '#FAFAFA',
-                        dark: '#333333',
-                        light: '#666666'
+                        secondary: '#FF9A8B',
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -25,345 +21,192 @@
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .content-auto {
-                content-visibility: auto;
-            }
-            .text-shadow-sm {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .scroll-smooth {
-                scroll-behavior: smooth;
-            }
-        }
-    </style>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 0; transform: translateY(20px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .img-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .img-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        img {
-            display: block;
-            max-width: 100%;
-            object-fit: cover;
-        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .img-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .img-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        img { display: block; max-width: 100%; object-fit: cover; }
     </style>
 </head>
-<body class="bg-neutral text-dark font-sans">
+<body class="bg-gray-50 text-gray-800">
 
     <!-- 导航栏 -->
     <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
         <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <img src="https://aka.doubaocdn.com/s/De6O1wdiUw" alt="Иконка дракончика" class="w-8 h-8">
-                <span class="text-xl font-bold text-primary">Планета Найлуна</span>
+                <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong-icon.png" alt="奶龙图标" class="w-8 h-8 rounded-full">
+                <span class="text-xl font-bold text-primary">奶龙星球</span>
             </div>
             <div class="hidden md:flex gap-8">
-                <a href="#home" class="text-dark/80 hover:text-primary transition-colors">Главная</a>
-                <a href="#gallery" class="text-dark/80 hover:text-primary transition-colors">Галерея</a>
-                <a href="#profile" class="text-dark/80 hover:text-primary transition-colors">Профиль</a>
-                <a href="#daily" class="text-dark/80 hover:text-primary transition-colors">Повседневность</a>
-                <a href="#wallpaper" class="text-dark/80 hover:text-primary transition-colors">Обои</a>
-                <a href="#about" class="text-dark/80 hover:text-primary transition-colors">О нас</a>
+                <a href="#home" class="text-gray-700 hover:text-primary">首页</a>
+                <a href="#gallery" class="text-gray-700 hover:text-primary">图鉴</a>
+                <a href="#profile" class="text-gray-700 hover:text-primary">档案</a>
+                <a href="#daily" class="text-gray-700 hover:text-primary">日常</a>
+                <a href="#wallpaper" class="text-gray-700 hover:text-primary">壁纸</a>
             </div>
-            <button id="menuBtn" class="md:hidden text-dark">
-                <i class="fa fa-bars text-xl"></i>
+            <button id="menuBtn" class="md:hidden">
+                <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
         <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
             <div class="container mx-auto px-6 py-4 flex flex-col gap-4">
-                <a href="#home" class="py-2">Главная</a>
-                <a href="#gallery" class="py-2">Галерея</a>
-                <a href="#profile" class="py-2">Профиль</a>
-                <a href="#daily" class="py-2">Повседневность</a>
-                <a href="#wallpaper" class="py-2">Обои</a>
-                <a href="#about" class="py-2">О нас</a>
+                <a href="#home">首页</a>
+                <a href="#gallery">图鉴</a>
+                <a href="#profile">档案</a>
+                <a href="#daily">日常</a>
+                <a href="#wallpaper">壁纸</a>
             </div>
         </div>
     </nav>
 
-    <!-- 首页主视觉 -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://aka.doubaocdn.com/s/mfs61wdiSb" alt="Главный баннер" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40"></div>
+    <!-- 首页 -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0">
+            <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong-banner.jpg" alt="奶龙首页大图" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/30"></div>
         </div>
-        <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white text-shadow-sm mb-6">
-                Милый дракончик Найлун • Планета милоты
-            </h1>
-            <p class="text-[clamp(1.2rem,2vw,1.5rem)] text-white/90 mb-10 max-w-2xl mx-auto">
-                Очаровательный малыш, который дарит всю милоту мира
-            </p>
-            <a href="#gallery" class="inline-block bg-primary hover:bg-primary/90 text-dark font-medium px-8 py-3 rounded-full transition-all hover:shadow-lg">
-                Исследовать мир <i class="fa fa-arrow-down ml-2"></i>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">可爱奶龙 · 萌趣星球</h1>
+            <p class="text-xl text-white/90 mb-8">治愈系小黄龙，传递快乐与可爱</p>
+            <a href="#gallery" class="inline-block bg-primary hover:bg-primary/90 text-gray-800 font-medium px-8 py-3 rounded-full">
+                探索更多 <i class="fas fa-arrow-down ml-2"></i>
             </a>
         </div>
     </section>
 
-    <!-- 形象图鉴 -->
-    <section id="gallery" class="py-24 bg-white">
-        <div class="container mx-auto px-6 md:px-12">
+    <!-- 图鉴 -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Галерея образов</h2>
-                <p class="text-light text-lg">Каждая сторона — полная милота</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">形象图鉴</h2>
+                <p class="text-gray-600">每一面都超萌</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="fade-in">
-                    <div class="bg-neutral rounded-2xl overflow-hidden img-hover h-80">
-                        <img src="https://aka.doubaocdn.com/s/nJ7I1wdiUE" alt="Аватар">
+                    <div class="bg-gray-50 rounded-2xl overflow-hidden img-hover h-72">
+                        <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong1.jpg" alt="奶龙图鉴1">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-semibold text-lg">Милые аватары</h3>
-                        <p class="text-light text-sm">Идеально для социальных сетей</p>
+                        <h3 class="font-semibold">可爱头像</h3>
                     </div>
                 </div>
                 <div class="fade-in">
-                    <div class="bg-neutral rounded-2xl overflow-hidden img-hover h-80">
-                        <img src="https://aka.doubaocdn.com/s/iOLa1wdiUO" alt="Полный рост">
+                    <div class="bg-gray-50 rounded-2xl overflow-hidden img-hover h-72">
+                        <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong2.jpg" alt="奶龙图鉴2">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-semibold text-lg">Изображения в полный рост</h3>
-                        <p class="text-light text-sm">Классный образ дракончика</p>
+                        <h3 class="font-semibold">全身形象</h3>
                     </div>
                 </div>
                 <div class="fade-in">
-                    <div class="bg-neutral rounded-2xl overflow-hidden img-hover h-80">
-                        <img src="https://aka.doubaocdn.com/s/kzfo1wdiUO" alt="Эмоции">
+                    <div class="bg-gray-50 rounded-2xl overflow-hidden img-hover h-72">
+                        <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong3.jpg" alt="奶龙图鉴3">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-semibold text-lg">Коллекция эмоций</h3>
-                        <p class="text-light text-sm">Разные настроения и выражения</p>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <div class="bg-neutral rounded-2xl overflow-hidden img-hover h-80">
-                        <img src="https://aka.doubaocdn.com/s/TXBD1wdiUE" alt="Милый вид">
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="font-semibold text-lg">Очаровательные позы</h3>
-                        <p class="text-light text-sm">Невероятно милые моменты</p>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <div class="bg-neutral rounded-2xl overflow-hidden img-hover h-80">
-                        <img src="https://aka.doubaocdn.com/s/qEHO1wdiUO" alt="Игривый">
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="font-semibold text-lg">Игривые моменты</h3>
-                        <p class="text-light text-sm">Весёлые и забавные выражения</p>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <div class="bg-neutral rounded-2xl overflow-hidden img-hover h-80">
-                        <img src="https://aka.doubaocdn.com/s/E8qA1wdiUD" alt="Умиление">
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="font-semibold text-lg">Полное умиление</h3>
-                        <p class="text-light text-sm">Самые нежные образы</p>
+                        <h3 class="font-semibold">表情合集</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 角色档案 -->
-    <section id="profile" class="py-24 bg-neutral">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
+    <!-- 档案 -->
+    <section id="profile" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2 fade-in">
-                    <img src="https://aka.doubaocdn.com/s/xalT1wdiSY" alt="Профиль дракончика" class="w-full rounded-2xl shadow-xl h-[500px] object-cover">
+                    <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong4.jpg" alt="奶龙档案" class="w-full rounded-2xl shadow-xl">
                 </div>
                 <div class="lg:w-1/2 fade-in">
-                    <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Профиль персонажа</h2>
-                    <p class="text-light text-lg mb-8">Познакомьтесь с этим милым жёлтым дракончиком</p>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fa fa-user text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg mb-1">Имя: Найлун</h3>
-                                <p class="text-light">Милый жёлтый дракончик с круглым телом и большими глазами</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fa fa-heart text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg mb-1">Характер: милый и добрый</h3>
-                                <p class="text-light">Невинный, немного рассеянный, всегда дарит радость окружающим</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fa fa-star text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg mb-1">История появления</h3>
-                                <p class="text-light">Прилетел с далёкой планеты, случайно попал на Землю и начал весёлое приключение, исцеляя всех от грусти своей милотой.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 趣味日常 -->
-    <section id="daily" class="py-24 bg-white">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Забавная повседневность</h2>
-                <p class="text-light text-lg">Весёлые моменты, полные радости</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-in">
-                <div class="bg-neutral rounded-2xl overflow-hidden shadow-lg img-hover">
-                    <img src="https://aka.doubaocdn.com/s/uoIP1wdiSY" alt="Повседневность 1" class="h-60 w-full">
-                </div>
-                <div class="bg-neutral rounded-2xl overflow-hidden shadow-lg img-hover">
-                    <img src="https://aka.doubaocdn.com/s/OVpd1wdiSb" alt="Повседневность 2" class="h-60 w-full">
-                </div>
-                <div class="bg-neutral rounded-2xl overflow-hidden shadow-lg img-hover">
-                    <img src="https://aka.doubaocdn.com/s/IKVE1wdiSn" alt="Повседневность 3" class="h-60 w-full">
-                </div>
-                <div class="bg-neutral rounded-2xl overflow-hidden shadow-lg img-hover">
-                    <img src="https://aka.doubaocdn.com/s/RHYV1wdiSV" alt="Повседневность 4" class="h-60 w-full">
-                </div>
-            </div>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="p-4">
-                    <i class="fa fa-sun-o text-primary text-3xl mb-3"></i>
-                    <h3 class="font-semibold mb-1">Игры на траве</h3>
-                    <p class="text-light text-sm">Бег под солнечными лучами</p>
-                </div>
-                <div class="p-4">
-                    <i class="fa fa-cloud text-primary text-3xl mb-3"></i>
-                    <h3 class="font-semibold mb-1">Отдых на облаках</h3>
-                    <p class="text-light text-sm">Ленивый отдых на мягких облаках</p>
-                </div>
-                <div class="p-4">
-                    <i class="fa fa-candy-cane text-primary text-3xl mb-3"></i>
-                    <h3 class="font-semibold mb-1">Конфетный дом</h3>
-                    <p class="text-light text-sm">Приключения в волшебном мире сладостей</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 壁纸专区 -->
-    <section id="wallpaper" class="py-24 bg-neutral">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4">Обои</h2>
-                <p class="text-light text-lg">Добавьте милоту в свой экран</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="fade-in">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg img-hover p-2">
-                        <img src="https://aka.doubaocdn.com/s/vRjF1wdiTC" alt="Компьютерные обои" class="w-full rounded-xl h-64">
-                    </div>
-                    <div class="mt-6 flex justify-between items-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">角色档案</h2>
+                    <p class="text-gray-600 mb-6">认识这只可爱的小黄龙</p>
+                    <div class="space-y-4">
                         <div>
-                            <h3 class="font-semibold text-lg">Компьютерные обои</h3>
-                            <p class="text-light text-sm">1920×1080 Full HD</p>
+                            <h3 class="font-semibold">名字：奶龙</h3>
+                            <p class="text-gray-600">圆滚滚的黄色小龙，大眼睛超萌</p>
                         </div>
-                        <a href="https://aka.doubaocdn.com/s/vRjF1wdiTC" download class="bg-secondary hover:bg-secondary/90 text-white px-5 py-2 rounded-full transition-colors">
-                            <i class="fa fa-download mr-1"></i> Скачать
-                        </a>
+                        <div>
+                            <h3 class="font-semibold">性格：呆萌可爱</h3>
+                            <p class="text-gray-600">天真无邪，有点小迷糊，治愈感满满</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 日常 -->
+    <section id="daily" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">趣味日常</h2>
+                <p class="text-gray-600">奶龙的快乐生活</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                <div class="bg-gray-50 rounded-2xl overflow-hidden img-hover">
+                    <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong5.jpg" alt="奶龙日常1" class="h-60 w-full">
+                </div>
+                <div class="bg-gray-50 rounded-2xl overflow-hidden img-hover">
+                    <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong6.jpg" alt="奶龙日常2" class="h-60 w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 壁纸 -->
+    <section id="wallpaper" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">壁纸专区</h2>
+                <p class="text-gray-600">把奶龙设为你的屏幕吧</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg img-hover">
+                        <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong7.jpg" alt="电脑壁纸" class="w-full">
+                    </div>
+                    <div class="mt-4 flex justify-between items-center">
+                        <div>
+                            <h3 class="font-semibold">电脑壁纸</h3>
+                            <p class="text-gray-600 text-sm">1920×1080</p>
+                        </div>
+                        <a href="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong7.jpg" download class="bg-primary px-4 py-2 rounded-full text-sm">下载</a>
                     </div>
                 </div>
                 <div class="fade-in">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg img-hover p-2 flex justify-center">
-                        <img src="https://aka.doubaocdn.com/s/50rz1wdiTp" alt="Мобильные обои" class="h-96 object-contain rounded-xl">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg img-hover">
+                        <img src="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong8.jpg" alt="手机壁纸" class="w-full">
                     </div>
-                    <div class="mt-6 flex justify-between items-center">
+                    <div class="mt-4 flex justify-between items-center">
                         <div>
-                            <h3 class="font-semibold text-lg">Мобильные обои</h3>
-                            <p class="text-light text-sm">1080×1920</p>
+                            <h3 class="font-semibold">手机壁纸</h3>
+                            <p class="text-gray-600 text-sm">1080×1920</p>
                         </div>
-                        <a href="https://aka.doubaocdn.com/s/50rz1wdiTp" download class="bg-secondary hover:bg-secondary/90 text-white px-5 py-2 rounded-full transition-colors">
-                            <i class="fa fa-download mr-1"></i> Скачать
-                        </a>
+                        <a href="https://raw.githubusercontent.com/ldtqq/ldtqq.github.io/main/images/nailong8.jpg" download class="bg-primary px-4 py-2 rounded-full text-sm">下载</a>
                     </div>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                <div class="bg-white rounded-xl overflow-hidden shadow img-hover">
-                    <img src="https://aka.doubaocdn.com/s/RIfq1wdiTM" class="h-44 w-full">
-                </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow img-hover">
-                    <img src="https://aka.doubaocdn.com/s/R0m81wdiTE" class="h-44 w-full">
-                </div>
-                <div class="bg-white rounded-xl overflow-hidden shadow img-hover">
-                    <img src="https://aka.doubaocdn.com/s/glAS1wdiTF" class="h-44 w-full">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 关于我们 -->
-    <section id="about" class="py-24 bg-white">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="max-w-3xl mx-auto text-center fade-in">
-                <img src="https://aka.doubaocdn.com/s/De6O1wdiUw" alt="Иконка" class="w-20 h-20 mx-auto mb-8">
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-6">О нас</h2>
-                <p class="text-light text-lg leading-relaxed mb-8">
-                    Это уникальная планета дракончика Найлуна. Мы собираем все милые моменты этого очаровательного малыша,
-                    предлагаем высококачественные изображения, эксклюзивные обои и интересные истории для всех любителей Найлуна.
-                </p>
-                <p class="text-light text-lg leading-relaxed">
-                    Пусть милота Найлуна исцелит вашу грусть и сделает каждый день радостным.
-                </p>
-                <div class="mt-10 flex justify-center gap-6">
-                    <a href="#" class="w-12 h-12 bg-primary/20 hover:bg-primary/30 rounded-full flex items-center justify-center text-primary transition-colors">
-                        <i class="fa fa-weibo"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 bg-primary/20 hover:bg-primary/30 rounded-full flex items-center justify-center text-primary transition-colors">
-                        <i class="fa fa-wechat"></i>
-                    </a>
-                    <a href="#" class="w-12 h-12 bg-primary/20 hover:bg-primary/30 rounded-full flex items-center justify-center text-primary transition-colors">
-                        <i class="fa fa-envelope"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 页脚 -->
-    <footer class="py-8 bg-dark text-white/70 text-center">
-        <div class="container mx-auto px-6">
-            <p>© 2025 Планета милоты • Найлун. Милота всегда рядом!</p>
-        </div>
+    <footer class="py-8 bg-gray-800 text-white text-center">
+        <p>© 2026 奶龙星球 | 可爱永远在线</p>
     </footer>
 
     <script>
-        // 导航栏滚动效果
+        // 导航滚动
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-white', 'shadow-md', 'py-3');
-                navbar.classList.remove('py-4');
+                navbar.classList.add('bg-white', 'shadow-md');
             } else {
-                navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
-                navbar.classList.add('py-4');
+                navbar.classList.remove('bg-white', 'shadow-md');
             }
         });
 
@@ -374,24 +217,15 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // 滚动渐显效果
+        // 滚动渐入
         const fadeElements = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         fadeElements.forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
